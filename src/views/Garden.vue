@@ -1,9 +1,9 @@
 <template>
   <div class="garden">
-    <h1 style="font-size: 2rem">This is an garden page</h1><br>
-    <h1 style="font-size: 2rem">This is an garden page</h1><br>
-    <h1 style="font-size: 2rem">This is an garden page</h1><br>
-    <h1 style="font-size: 2rem">This is an garden page</h1><br>
+    <div class="garden-banner"></div>
+    <div class="garden-count">count</div>
+    <div class="garden-flow">flow</div>
+    <div class="garden-virtue">virtue</div>
   </div>
 </template>
 
@@ -15,7 +15,21 @@ export default {
 
 <style lang="less" scoped>
 .garden {
-  background-color: red;
+  background-color: #ffffff;
+  .garden-banner {
+    width: 7.5rem;
+    height: 3.6rem;
+    background-color: #EEEEEE;
+  }
+  .garden-count {
+
+  }
+  .garden-flow {
+
+  }
+  .garden-virtue {
+
+  }
 }
 </style>
 

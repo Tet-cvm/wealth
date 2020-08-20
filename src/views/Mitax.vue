@@ -1,9 +1,6 @@
 <template>
   <div class="mitax">
-    <h1 style="font-size: 2rem">This is an mitax page</h1><br>
-    <h1 style="font-size: 2rem">This is an mitax page</h1><br>
-    <h1 style="font-size: 2rem">This is an mitax page</h1><br>
-    <h1 style="font-size: 2rem">This is an mitax page</h1><br>
+    Mitax
   </div>
 </template>
 

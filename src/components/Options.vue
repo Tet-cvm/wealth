@@ -54,8 +54,6 @@ export default {
       }
     }
   },
-  mounted() {
-  },
   methods: {
     onCancel() {
       this.$emit('btn-cancel');
@@ -122,4 +120,4 @@ export default {
     }
   }
 }
-</style>''
+</style>
