@@ -41,25 +41,19 @@
         <h1>合作内容</h1>
         <em>COOPERATION</em>
       </div>
-      <!-- <div class="account-process">
-        <div>center</div>
-        <template v-for="(item, index) in processData">
-          <span :key="index">{{ item.name }}</span>
+      <div class="account-circle">
+        <span>明动服务</span>
+        <template v-for="(item, index) in circleData">
+          <span :key="index" v-html="item.name"></span>
         </template>
-      </div> -->
-    </div>
-    <!--【办理流程】-->
-    <div class="account-process">
-      <div class="account-head">
-        <h1>办理流程</h1>
-        <em>PROCESS</em>
       </div>
-      <!-- <div class="account-process">
-        <div>center</div>
-        <template v-for="(item, index) in processData">
-          <span :key="index">{{ item.name }}</span>
-        </template>
-      </div> -->
+    </div>
+    <!--【立即办理】-->
+    <div class="account-handle">
+      <div class="account-head">
+        <h1>立即办理</h1>
+        <em>HANDLE</em>
+      </div>
     </div>
   </div>
 </template>
@@ -103,30 +97,30 @@ export default {
           image: ""
         }
       ],
-      processData: [
+      circleData: [
         {
-          name: "客户签约",
-          image: ""
+          name: "核对<br>财务<br>账目"
         },
         {
-          name: "核税种",
-          image: ""
+          name: "编制<br>记账<br>凭证"
         },
         {
-          name: "客户财务交接",
-          image: ""
+          name: "编制<br>会计<br>报表"
         },
         {
-          name: "定期报表发送",
-          image: ""
+          name: "电子<br>网络<br>申报"
         },
         {
-          name: "日常记账操作",
-          image: ""
+          name: "财务<br>政策<br>传递"
         },
         {
-          name: "建立客户档案",
-          image: ""
+          name: "日常<br>电话<br>答疑"
+        },
+        {
+          name: "审核<br>原始<br>凭证"
+        },
+        {
+          name: "建立<br>企业<br>账套"
         }
       ]
     }
@@ -175,7 +169,7 @@ export default {
           &:after {
             position: absolute;
             top: 1.14rem;
-            left: 0.3rem;
+            left: -0.3rem;
             content: "";
             width: .2rem;
             height: .04rem;
@@ -187,7 +181,7 @@ export default {
           &:after {
             position: absolute;
             top: 1.14rem;
-            left: 0.3rem;
+            left: -0.3rem;
             content: "";
             width: .2rem;
             height: .04rem;
@@ -246,8 +240,82 @@ export default {
     }
   }
   .account-cooperation {
+    padding: 0.68rem 0 0.48rem 0;
+    border-top: 1px solid #EEEEEE;
+    background-color: #EEEEEE;
+    .account-circle {
+      margin: 0.48rem auto 0 auto;
+      position: relative;
+      width: 6.7rem;
+      height: 6.7rem;
+      background: url("~@/assets/image/circle.png") no-repeat;
+      background-size: 3.24rem 3.24rem;
+      background-position: center center;
+      > span {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.36rem;
+        height: 1.36rem;
+        font-size: 0.3rem;
+        color: #ffffff;
+        line-height: 0.34rem;
+        // background-color: #cf5955;
+        background: rgba(255, 0, 0, 0.6);
+        border-radius: 50px;
+        transform: translate(-50%);
+        &:nth-child(1) {
+          top: 50%;
+          left: 50%;
+          width: 2.26rem;
+          height: 2.26rem;
+          font-size: 0.4rem;
+          color: #212121;
+          line-height: 0.34rem;
+          font-weight: bolder;
+          background-color: #ffffff;
+          border-radius: 1000px;
+          transform: translate(-50%, -50%);
+        }
+        &:nth-child(2) {
+          top: 0;
+          left: 50%;
+        }
+        &:nth-child(3) {
+          top: 13%;
+          left: 79%;
+        }
+        &:nth-child(4) {
+          top: 40%;
+          left: 89.8%;
+        }
+        &:nth-child(5) {
+          bottom: 13%;
+          left: 79%;
+        }
+        &:nth-child(6) {
+          bottom: 0;
+          left: 50%;
+        }
+        &:nth-child(7) {
+          bottom: 13%;
+          left: 21%;
+        }
+        &:nth-child(8) {
+          top: 40%;
+          left: 10.1%;
+        }
+        &:nth-child(9) {
+          top: 13%;
+          left: 21%;
+        }
+      }
+    }
   }
-  .account-process {
+  .account-handle {
+    padding: 0.68rem 0 0.48rem 0;
+    border-top: 1px solid #EEEEEE;
   }
   .account-head {
     display: flex;

@@ -36,7 +36,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 项目结构
                 |- image 静态图片资源
-                |
                 |      |- base.js  全局rem.js
      |- assets -|- js -|- utils.js 常用方法集合 
      |
