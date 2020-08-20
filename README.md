@@ -58,6 +58,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
      |         |
      |         |
      |
-src -|- main.js 入口文件
+     |- main.js 入口文件
 
 ### 项目
