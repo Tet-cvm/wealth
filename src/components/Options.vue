@@ -28,6 +28,10 @@ export default {
       cover: false,
       list: [
         {name: '首页', path: '/'},
+        {name: '财务代理', path: '/account'},
+        {name: '园区直招', path: '/garden'},
+        {name: '爱税筹', path: '/mitax'},
+        {name: '舟山自贸区', path: '/steamer'},
         {name: '关于我们', path: '/about'},
       ]
     }

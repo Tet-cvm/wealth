@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header>
-      <router-view/>
+    <Header @btn-slider="onSlider">
+      <router-view :slider="slider" />
     </Header>
   </div>
 </template>
@@ -10,8 +10,18 @@
 import Header from '@/components/Header.vue'
 export default {
   name: 'App',
+  data() {
+    return {
+      slider: false
+    }
+  },
   components: {
     Header
+  },
+  methods: {
+    onSlider() {
+      this.slider = true;
+    }
   }
 }
 </script>

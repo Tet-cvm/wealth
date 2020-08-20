@@ -21,26 +21,12 @@
           <div class="slide-bus">
             <h2>我们的业务</h2>
             <div class="slide-grid">
-              <a href="./account.html">
-                <img src="~@/assets/image/account.png" alt="">
-                <span>财务代理</span>
-              </a>
-              <a href="./garden.html">
-                <img src="~@/assets/image/garden.png" alt="">
-                <span>园区直招</span>
-              </a>
-              <a href="./mitax.html">
-                <img src="~@/assets/image/mitax.png" alt="">
-                <span>爱税筹</span>
-              </a>
-              <a href="./steamer.html">
-                <img src="~@/assets/image/steamer.png" alt="">
-                <span>舟山自贸区</span>
-              </a>
-              <a href="./steamer.html">
-                <img src="~@/assets/image/steamer.png" alt="">
-                <span>舟山自贸区</span>
-              </a>
+              <template v-for="(item, index) in listData">
+                <router-link class="slide-list" :to="item.path" :key="index">
+                  <img src="~@/assets/image/account.png" alt="" />
+                  <span>{{ item.name }}</span>
+                </router-link>
+              </template>
             </div>
           </div>
           <div class="slide-statement">
@@ -57,11 +43,33 @@ import 'swiper/swiper.less';
 import Swiper from 'swiper/swiper-bundle.js';
 export default {
   name: 'Home',
+  props: {
+    slider: Boolean
+  },
   data() {
     return {
       clientWidth: 0,
       clientHeight: 0,
-      bannerRatio: false
+      bannerSwiper: Object,
+      bannerRatio: false, // 首屏图片自适应
+      hasHandler: false, // 用户是否手动滑动过
+      listData: [
+        {name: '首页', path: '/'},
+        {name: '财务代理', path: '/account'},
+        {name: '园区直招', path: '/garden'},
+        {name: '爱税筹', path: '/mitax'},
+        {name: '舟山自贸区', path: '/steamer'},
+        {name: '关于我们', path: '/about'},
+      ]
+    }
+  },
+  watch: {
+    slider: {
+      handler: function() {
+        if (!this.hasHandler) {
+          this.bannerSwiper.slideTo(1, 1000, false);
+        }
+      }
     }
   },
   mounted() {
@@ -76,12 +84,13 @@ export default {
       that.bannerRatio = true;
     }
     // 初始化模块
-    new Swiper('.home .swiper-container', {
+    that.bannerSwiper = new Swiper('.home .swiper-container', {
       mousewheel: true,
       direction: 'vertical',
       height: that.clientHeight,
       on: {
         slideChangeTransitionStart: function() {
+          that.hasHandler = true;
           that.$store.commit('setStateType', this.activeIndex == 0 ? true : false);
         }
       }
@@ -201,7 +210,7 @@ export default {
             flex-wrap: wrap;
             margin: 0.12rem auto 0 auto;
             width: 7.04rem;
-            > a {
+            .slide-list {
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -225,10 +234,8 @@ export default {
           }
         }
         .slide-statement {
-          position: absolute;
-          bottom: 0.32rem;
-          left: 50%;
-          transform: translate(-50%);
+          margin: 0.42rem 0 0 0;
+          text-align: center;
           > a {
             font-size: 0.26rem;
             color: #8f8f8f;

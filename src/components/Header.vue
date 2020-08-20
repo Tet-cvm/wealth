@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="header" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;'">
+    <div class="header" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
       <div class="header-logo">
         <img src="" alt="" />
       </div>
@@ -58,7 +58,7 @@ export default {
     // 每隔1小时显示海报
     let advert = getCookie('advert');
     if (advert == process.env.VUE_APP_VERSION) {
-      console.log('滑动到下一屏');
+      this.onSlide();
     } else {
       this.$store.commit('setStatePoster', true);
       setCookie('advert', process.env.VUE_APP_VERSION, 1);
@@ -76,7 +76,9 @@ export default {
       this.$store.commit('setStatePoster', false);
     },
     onSlide() {
-      console.log('滑动到下一屏222');
+      setTimeout(() => {
+        this.$emit('btn-slider');
+      }, 3600);
     }
   }
 }
