@@ -43,7 +43,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
      |              |- Header.vue   页面头部固定栏
      |- components -|- Options.vue  页面右侧菜单栏
      |              |- Poster.vue   页面海报栏
-src -|
+     |
      |- router -| index.js
      |
      |- store -| index.js
@@ -58,6 +58,6 @@ src -|
      |         |
      |         |
      |
-     |- main.js 入口文件
+src -|- main.js 入口文件
 
-### 项目逻辑
+### 项目
