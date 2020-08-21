@@ -68,6 +68,7 @@ export default {
       handler: function() {
         if (!this.hasHandler) {
           this.bannerSwiper.slideTo(1, 1000, false);
+          this.$store.commit('setStateType', false);
         }
       }
     }

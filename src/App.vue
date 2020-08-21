@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="wind">
     <Header @btn-slider="onSlider">
       <router-view :slider="slider" />
     </Header>
@@ -57,7 +57,7 @@ ul li{
 div, span, img {
   cursor: pointer;
 }
-#app {
+#wind {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

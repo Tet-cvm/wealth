@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { getCookie, setCookie } from '@/assets/js/utils.js'
+import { getCookie, setCookie } from '@/assets/js/usualUtils.js'
 import Poster from '@/components/Poster.vue'
 import Options from '@/components/Options.vue'
 export default {

@@ -48,13 +48,6 @@
         </template>
       </div>
     </div>
-    <!--【立即办理】-->
-    <div class="account-handle">
-      <div class="account-head">
-        <h1>立即办理</h1>
-        <em>HANDLE</em>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -312,10 +305,6 @@ export default {
         }
       }
     }
-  }
-  .account-handle {
-    padding: 0.68rem 0 0.48rem 0;
-    border-top: 1px solid #EEEEEE;
   }
   .account-head {
     display: flex;
