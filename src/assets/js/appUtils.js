@@ -56,12 +56,11 @@ export function loadedBox(type, text = null) {
     loaded.style.background = "rgba(0, 0, 0, 0.28)";
     loaded.innerHTML = `<div style="position: absolute; top: 50%; left: 50%; width: 1.6rem; height: 1.6rem; background: rgba(0, 0, 0, 0.68); transform: translate(-50%, -50%); border-radius: 0.1rem;">
       <svg viewBox="-5 3 70 70" style="color: rgb(255, 255, 255)">
-        <circle cx="30" cy="30" r="15" fill="none" style="animation: van-circular 1.5s ease-in-out infinite; stroke: currentColor; stroke-width: 3; stroke-linecap: round;"></circle>
+        <circle cx="30" cy="30" r="15" fill="none" style="animation: v-circular 1.5s ease-in-out infinite; stroke: currentColor; stroke-width: 3; stroke-linecap: round;"></circle>
       </svg>
       <span style="position: absolute; left: 50%; bottom: 0.1rem; overflow: hidden; white-space: nowrap; width: 1.4rem; transform: translate(-50%); font-size: 0.24rem; color: #ffffff; text-align: center;">${text}</span>
     </div>`;
-    document.getElementById("wind").appendChild(loaded);
-    // document.body.appendChild(loaded);
+    document.body.appendChild(loaded);
     let count = 0;
     let show = setInterval(() => {
       count += 10;

@@ -16,7 +16,7 @@
         <span>5.显著提高营业利润。</span>
       </div>
     </div>
-    <div class="garden-count">
+    <div class="garden-question">
       <img src="~@/assets/image/garden.jpg" alt="" />
     </div>
     <div class="garden-count">
@@ -193,13 +193,14 @@ export default {
       }
     }
   }
-  .garden-count {
+  .garden-question {
     > img {
       width: 7.5rem;
       height: 7.33rem;
     }
   }
   .garden-count {
+    padding: 0 0 0.62rem 0;
     .garden-head {
       > h3 {
         margin: 0 0 0 0.39rem;
@@ -280,7 +281,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0.42rem auto 0 auto;
+        margin: 0.76rem auto 0 auto;
         width: 6.9rem;
         height: 0.8rem;
         background-color: #1aac19;

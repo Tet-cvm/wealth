@@ -62,4 +62,37 @@ div, span, img {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@-webkit-keyframes v-circular {
+	0% {
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0
+	}
+
+	50% {
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -40
+	}
+
+	100% {
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -120
+	}
+}
+
+@keyframes v-circular {
+	0% {
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0
+	}
+
+	50% {
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -40
+	}
+
+	100% {
+		stroke-dasharray: 90,150;
+		stroke-dashoffset: -120
+	}
+}
 </style>
