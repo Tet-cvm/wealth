@@ -6,6 +6,7 @@ import store from './store'
 import './assets/js/baseUtils.js'
 
 router.beforeEach((to, from, next) => {
+  console.log(to, from, next);
   if (to.name == 'Home') {
     store.commit('setStateType', true);
   } else {

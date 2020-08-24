@@ -20,7 +20,7 @@ export default {
     Header
   },
   created() {
-    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
+    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js");
   },
   methods: {
     onSlider() {

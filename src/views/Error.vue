@@ -14,7 +14,7 @@
 export default {
   name: "Error"
 }
-</script>>
+</script>
 
 <style lang="less" scoped>
 .error {
