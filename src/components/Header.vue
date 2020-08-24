@@ -2,7 +2,8 @@
   <div class="content">
     <div class="header" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
       <div class="header-logo">
-        <img src="" alt="" />
+        <img v-show="$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="" />
+        <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-black.png" alt="" />
       </div>
       <div :class="$store.getters.getStateType ? 'header-menu menu-white' : 'header-menu'" @click="onToggle">
         <span></span>
@@ -14,7 +15,7 @@
       <slot></slot>
     </div>
     <Options :toggle="$store.getters.getStateToggle" @btn-cancel="onToggle" />
-    <Poster :toggle="$store.getters.getStatePoster" @btn-cancel="onCancel" />
+    <Poster :toggle="$store.getters.getStatePoster" @btn-cancel="onCancel" @btn-poster="onPoster" />
   </div>
 </template>
 
@@ -64,7 +65,6 @@ export default {
       setCookie('advert', process.env.VUE_APP_VERSION, 1);
       this.watchPoster = true;
     }
-    console.log(advert, "advert", process.env.VUE_APP_AAA, process.env.VUE_APP_VERSION, process.env.NODE_ENV);
   },
   methods: {
     onToggle() {
@@ -73,6 +73,9 @@ export default {
     },
     onCancel() {
       this.watchCancel = true;
+      this.$store.commit('setStatePoster', false);
+    },
+    onPoster() {
       this.$store.commit('setStatePoster', false);
     },
     onSlide() {
@@ -109,8 +112,8 @@ export default {
       height: 1.18rem;
       > img {
         margin: 0 0 0 0.4rem;
-        width: 1.93rem;
-        height: 0.45rem;
+        width: 2.33rem;
+        height: 0.64rem;
         background-color: #eeeeee;
       }
     }

@@ -9,7 +9,7 @@
             <h1>帮助企业</h1>
             <h1>实现更大的经济效益！</h1>
           </div>
-          <div class="slide-arrow" id="slide-arrow">
+          <div class="slide-arrow" @click="onSilder">
             <img src="~@/assets/image/arrow.png" alt="" />
           </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="slide-grid">
               <template v-for="(item, index) in listData">
                 <router-link class="slide-list" :to="item.path" :key="index">
-                  <img src="~@/assets/image/account.png" alt="" />
+                  <img :src="item.image" alt="" />
                   <span>{{ item.name }}</span>
                 </router-link>
               </template>
@@ -54,19 +54,19 @@ export default {
       bannerRatio: false, // 首屏图片自适应
       hasHandler: false, // 用户是否手动滑动过
       listData: [
-        {name: '首页', path: '/'},
-        {name: '财务代理', path: '/account'},
-        {name: '园区直招', path: '/garden'},
-        {name: '爱税筹', path: '/mitax'},
-        {name: '舟山自贸区', path: '/steamer'},
-        {name: '关于我们', path: '/about'},
+        // {name: '首页', path: '/', image: require("./../assets/image/home1.png")},
+        {name: '财务代理', path: '/account', image: require("./../assets/image/home2.png")},
+        {name: '园区直招', path: '/garden', image: require("./../assets/image/home3.png")},
+        {name: '爱税筹', path: '/mitax', image: require("./../assets/image/home4.png")},
+        {name: '舟山自贸区', path: '/steamer', image: require("./../assets/image/home5.png")},
+        {name: '关于我们', path: '/about', image: require("./../assets/image/home6.png")},
       ]
     }
   },
   watch: {
     slider: {
       handler: function() {
-        if (!this.hasHandler) {
+        if (!this.hasHandler && this.bannerSwiper.activeIndex == 0) {
           this.bannerSwiper.slideTo(1, 1000, false);
           this.$store.commit('setStateType', false);
         }
@@ -96,6 +96,14 @@ export default {
         }
       }
     });
+  },
+  methods: {
+    onSilder() {
+      if (this.bannerSwiper.activeIndex == 0) {
+        this.bannerSwiper.slideTo(1, 1000, false);
+        this.$store.commit('setStateType', false);
+      }
+    }
   }
 }
 </script>
@@ -203,7 +211,7 @@ export default {
             margin: 0 0 0 0.48rem;
             font-size: 0.38rem;
             color: #222222;
-            font-weight: 400;
+            font-weight: bolder;
           }
           .slide-grid {
             display: flex;
@@ -223,6 +231,7 @@ export default {
                 width: 1.26rem;
                 height: 1.26rem;
                 background-color: #eeeeee;
+                border-radius: 0.12rem;
               }
               > span {
                 margin: 0.12rem 0 0 0;
@@ -235,7 +244,11 @@ export default {
           }
         }
         .slide-statement {
+          position: absolute;
+          bottom: 2rem;
+          left: 0;
           margin: 0.42rem 0 0 0;
+          width: 100%;
           text-align: center;
           > a {
             font-size: 0.26rem;

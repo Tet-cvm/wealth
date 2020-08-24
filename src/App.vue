@@ -7,9 +7,10 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import { injectScript } from '@/assets/js/usualUtils.js'
+import Header from "@/components/Header.vue"
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       slider: false
@@ -17,6 +18,9 @@ export default {
   },
   components: {
     Header
+  },
+  created() {
+    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
   },
   methods: {
     onSlider() {
@@ -37,6 +41,7 @@ export default {
   -webkit-tap-highlight-color: transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 html, body {
   background-color: #ffffff;

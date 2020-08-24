@@ -15,6 +15,7 @@ export function toastBox(text = "网络错误～") {
     toast.style.borderRadius = "0.1rem";
     toast.style.transform = "translate(-50%, -50%)";
     toast.style.background = "rgba(0, 0, 0, 0.68)";
+    toast.style.zIndex = "999";
     toast.innerHTML = `<span style="min-width: 1.4rem; max-width: 4.4rem; font-size: 0.28rem; color: #ffffff;">${text}</span>`;
     document.body.appendChild(toast);
     let count = 0;
@@ -54,6 +55,7 @@ export function loadedBox(type, text = null) {
     loaded.style.width = "100%";
     loaded.style.height = "100vh";
     loaded.style.background = "rgba(0, 0, 0, 0.28)";
+    loaded.style.zIndex = "999";
     loaded.innerHTML = `<div style="position: absolute; top: 50%; left: 50%; width: 1.6rem; height: 1.6rem; background: rgba(0, 0, 0, 0.68); transform: translate(-50%, -50%); border-radius: 0.1rem;">
       <svg viewBox="-5 3 70 70" style="color: rgb(255, 255, 255)">
         <circle cx="30" cy="30" r="15" fill="none" style="animation: v-circular 1.5s ease-in-out infinite; stroke: currentColor; stroke-width: 3; stroke-linecap: round;"></circle>

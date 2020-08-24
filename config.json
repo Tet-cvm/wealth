@@ -1,0 +1,44 @@
+{
+  "home": {
+    "title": "明动咨询",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "account": {
+    "title": "财务代理",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "garden": {
+    "title": "园区直招",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "mitax": {
+    "title": "爱税筹",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "steamer": {
+    "title": "舟山自贸区",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "about": {
+    "title": "关于我们",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  },
+  "error": {
+    "title": "404",
+    "author": "明动咨询",
+    "keywords": "key",
+    "description": "desc"
+  }
+}

@@ -1,6 +1,8 @@
 <template>
   <div class="steamer">
-    <div class="steamer-banner"></div>
+    <div class="steamer-banner">
+      <img src="~@/assets/image/steamer.jpg" alt="" />
+    </div>
     <div class="steamer-map">
       <div class="map-title">
         <span></span>
@@ -58,7 +60,7 @@
         <h3>案例展示</h3>
         <span></span>
       </div>
-      <div class="case-swiper">
+      <div class="case-swiper" style="z-index: 666;">
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <template v-for="(item, index) in bannerData">
@@ -92,15 +94,20 @@
         <img src="~@/assets/image/coop07.jpg" alt="" />
       </div>
     </div>
+    <Dialog :data="resultData" @btn-dialog="onSure"/>
   </div>
 </template>
 
 <script>
+import Dialog from '@/components/Dialog.vue'
 import 'swiper/swiper.less';
 import Swiper from 'swiper/swiper-bundle.js';
 import { loadedBox, toastBox } from "@/assets/js/appUtils.js"
 export default {
   name: 'Steamer',
+  components: {
+    Dialog
+  },
   data() {
     return {
       pictureData: [
@@ -133,15 +140,21 @@ export default {
       bannerIndex: 0,
       bannerData: [
         {
-          image: require('./../assets/image/card01.jpg')
+          image: require("./../assets/image/card01.jpg")
         },
         {
-          image: require('./../assets/image/card02.jpg')
+          image: require("./../assets/image/card02.jpg")
         },
         {
-          image: require('./../assets/image/card03.jpg')
+          image: require("./../assets/image/card03.jpg")
         }
-      ]
+      ],
+      resultData: {
+        status: false,
+        title: "预计年财政支持(元)",
+        add: Number,
+        get: Number
+      }
     }
   },
   mounted() {
@@ -180,10 +193,12 @@ export default {
             that.addIncome = "纳税额不足~";
             that.getIncome = "纳税额不足~";
           }
+          that.resultData.add = that.addIncome;
+          that.resultData.get = that.getIncome;
+          that.resultData.status = true;
           loadedBox(false);
           that.btnPush = 1;
           that.btnStatus = true;
-          console.log(that.addIncome, that.getIncome);
       }, 1800);
       } else {
         toastBox("请输入增值税或所得税");
@@ -195,6 +210,9 @@ export default {
       } else {
         this.bannerSwiper.slideNext();
       }
+    },
+    onSure() {
+      this.resultData.status = false;
     }
   }
 }
@@ -206,8 +224,12 @@ export default {
   background-color: #ffffff;
   .steamer-banner {
     width: 7.5rem;
-    height: 3.6rem;
+    height: 3.45rem;
     background-color: #EEEEEE;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .steamer-map {
     .map-title {
@@ -221,7 +243,7 @@ export default {
       > span {
         width: 1.4rem;
         height: 1px;
-        background-color: #222222;
+        background-color: #adadad;
       }
       > h3 {
         padding: 0 0.3rem;
@@ -281,7 +303,7 @@ export default {
       > span {
         width: 1.8rem;
         height: 1px;
-        background-color: #222222;
+        background-color: #adadad;
       }
       > h3 {
         padding: 0 0.3rem;
@@ -309,10 +331,9 @@ export default {
       > span {
         width: 2rem;
         height: 1px;
-        background-color: #222222;
+        background-color: #adadad;
       }
       > h3 {
-        margin: 0.18rem 0 0 0;
         padding: 0 0.3rem;
         font-size: 0.38rem;
         color: #de2128;
@@ -406,10 +427,9 @@ export default {
       > span {
         width: 2rem;
         height: 1px;
-        background-color: #222222;
+        background-color: #adadad;
       }
       > h3 {
-        margin: 0.18rem 0 0 0;
         padding: 0 0.3rem;
         font-size: 0.38rem;
         color: #de2128;
@@ -464,10 +484,9 @@ export default {
       > span {
         width: 2rem;
         height: 1px;
-        background-color: #222222;
+        background-color: #adadad;
       }
       > h3 {
-        margin: 0.18rem 0 0 0;
         padding: 0 0.3rem;
         font-size: 0.38rem;
         color: #de2128;

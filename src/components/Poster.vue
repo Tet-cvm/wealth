@@ -1,6 +1,6 @@
 <template>
   <div class="poster" v-show="cover" ref="poster">
-    <div class="poster-panel" ref="panel">
+    <div class="poster-panel" ref="panel" @click="onPoster">
       <div class="poster-cancel" @click="onCancel">
         <img src="~@/assets/image/cancel.png" alt="" />
       </div>
@@ -22,7 +22,6 @@ export default {
   watch: {
     toggle: {
       handler: function() {
-        console.log(this.toggle, "@@ this.toggle");
         if (this.toggle) {
           this.cover = true;
           setTimeout(() => {
@@ -43,7 +42,10 @@ export default {
   },
   methods: {
     onCancel() {
-      this.$emit('btn-cancel');
+      this.$emit("btn-cancel");
+    },
+    onPoster() {
+      this.$emit("btn-poster");
     }
   }
 }
@@ -66,10 +68,12 @@ export default {
     left: 50%;
     width: 4.8rem;
     height: 6.2rem;
-    
     transform: translate(-50%, -50%);
     border-radius: 0.12rem;
     transition: top 300ms ease-out 100ms;
+    background: url('./../assets/image/mitax.jpg') no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
     background-color: #ffffff;
     .poster-cancel {
       display: flex;

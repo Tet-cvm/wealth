@@ -39,7 +39,6 @@ export default {
   watch: {
     toggle: {
       handler: function() {
-        console.log(this.toggle, "@@ this.toggle");
         if (this.toggle) {
           this.cover = true;
           setTimeout(() => {

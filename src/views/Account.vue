@@ -1,6 +1,8 @@
 <template>
   <div class="account">
-    <div class="account-banner"></div>
+    <div class="account-banner">
+      <img src="~@/assets/image/agency.jpg" alt="" />
+    </div>
     <!--【原因】-->
     <div class="account-reason">
       <div class="account-head">
@@ -58,12 +60,12 @@ export default {
     return {
       reasonData: [
         {
-          image: "",
+          image: require("./../assets/image/government.jpg"),
           birth: "政府规定",
           article: "财政部门建议: 2005年1月1日起全国范围内小企业实行新的《小企业会计制度》, 广大的小企业要根据会计业务的需要, 要设置会计机构, 或者在有关的机构中设置会计人员, 或会计主管人员, 不具备条件的, 要委托经过批准设立的, 从事上海代理记账机构来外包。"
         },
         {
-          image: "",
+          image: require("./../assets/image/economy.jpg"),
           birth: "节省费用",
           article: "单位设会计岗位, 工资开支一般每月要5000元（不包括“五险一金”）, 根据本单位部门经理的收入水平, 财务负责人的工资高的可达上万元, 而找上海财务代理知名品牌的我们, 支付的费用与单位的工资水平无关, 一般为300-1000元。"
         }
@@ -72,22 +74,22 @@ export default {
         {
           name: "明码实价",
           article: "代理记账价格透明, 帮助客户节约人力成本",
-          image: ""
+          image: require("./../assets/image/acc01.jpg"),
         },
         {
           name: "存档健全",
           article: "一客户一档案, 电子、纸质双重保障, 现金账目与电子款项一一对应, 确保数据安全",
-          image: ""
+          image: require("./../assets/image/acc02.jpg"),
         },
         {
           name: "专业效率",
           article: "每个客户配备1名财务专员及财务总监, 双重服务, 效率加倍",
-          image: ""
+          image: require("./../assets/image/acc03.jpg"),
         },
         {
           name: "全责担保",
           article: "签订代理记账合同, 条例清晰, 权责分明",
-          image: ""
+          image: require("./../assets/image/acc04.jpg"),
         }
       ],
       circleData: [
@@ -126,8 +128,12 @@ export default {
   background-color: #ffffff;
   .account-banner {
     width: 7.5rem;
-    height: 3.6rem;
+    height: 3.45rem;
     background-color: #EEEEEE;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .account-reason {
     margin: 0.68rem 0 0 0;
@@ -227,7 +233,11 @@ export default {
             height: 2.34rem;
             border-radius: 0.05rem;
             background-color: #EEEEEE;
+            border: 1px solid #eeeeee;
           }
+        }
+        &:last-child {
+          border-bottom: none;
         }
       }
     }
